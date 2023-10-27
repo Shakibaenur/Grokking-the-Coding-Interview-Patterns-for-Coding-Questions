@@ -1,4 +1,4 @@
-package org.example.ContainsDuplicate;
+package org.example.WarmUp;
 
 import java.util.Arrays;
 import java.util.HashSet;
