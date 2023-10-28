@@ -17,3 +17,5 @@ public class NumberOfGoodPairs {
         }
     }
 }
+//T.C: O(N)
+//S.C: O(N)
