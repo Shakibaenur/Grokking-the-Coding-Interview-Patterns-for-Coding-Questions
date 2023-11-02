@@ -1,6 +1,8 @@
 package org.example.TwoPointer;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /*
 Given an array arr of unsorted numbers and a target sum, count all
@@ -14,10 +16,11 @@ Input: [-1, 0, 2, 3], target=3
 Output: 2
 Explanation: There are two triplets whose sum is less than the target: [-1, 0, 3], [-1, 0, 2]
  */
-public class FindSmallerTriplets {
-    public static int searchTriplets(int[] arr, int target) {
+public class FindSmallerTripletsExtended {
+    public static List<List<Integer>> searchTriplets(int[] arr, int target) {
         int count = 0;
         int n = arr.length;
+        List<List<Integer>> triplets=new ArrayList<>();
         Arrays.sort(arr);
         for (int i = 0; i < n - 2; i++) {
             int l = i + 1;
@@ -28,17 +31,17 @@ public class FindSmallerTriplets {
                     // If the sum is less than the target, all the triplets between left and right are valid.
                     count += r - l;
                     //if extension required to find out all the triplets
-//                    for (int k = r; k > l; k--){
-//                        triplets.add(Arrays.asList(arr[i],arr[l],arr[k]));
-//                        System.out.println(arr[i] + ", " + arr[l] + ", " + arr[k]);
-//                    }
+                    for (int k = r; k > l; k--){
+                        triplets.add(Arrays.asList(arr[i],arr[l],arr[k]));
+                        System.out.println(arr[i] + ", " + arr[l] + ", " + arr[k]);
+                    }
                     l++;
                 } else {
                     r--;
                 }
             }
         }
-        return count;
+        return triplets;
     }
 
     public static void main(String[] args) {
