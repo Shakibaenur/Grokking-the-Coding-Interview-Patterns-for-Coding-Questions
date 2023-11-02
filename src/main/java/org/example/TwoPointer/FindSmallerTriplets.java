@@ -27,6 +27,10 @@ public class FindSmallerTriplets {
                 if (sum < target) {
                     // If the sum is less than the target, all the triplets between left and right are valid.
                     count += r - l;
+                    //if extension required to find out all the triplets
+//                    for (int k = l; k < r; k++) {
+//                        System.out.println(arr[i] + ", " + arr[l] + ", " + arr[k]);
+//                    }
                     l++;
                 } else {
                     r--;
