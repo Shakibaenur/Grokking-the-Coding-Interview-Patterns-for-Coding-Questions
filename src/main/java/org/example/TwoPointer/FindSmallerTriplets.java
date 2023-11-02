@@ -46,4 +46,8 @@ public class FindSmallerTriplets {
     }
 }
 //T.C: O(N^2)
-//S.C: O(1)
+//Sorting the array will take .
+// The searchPair() will take . So, overall searchTriplets() will take ,
+// which is asymptotically equivalent to
+//The space complexity of the above algorithm will be
+// which is required for sorting if we are not using an in-place sorting algorithm.
