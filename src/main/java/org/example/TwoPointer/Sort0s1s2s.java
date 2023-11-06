@@ -77,7 +77,7 @@ You must solve this problem without using the library's sort function.
                     int temp=nums[mid];
                     nums[mid]=nums[high];
                     nums[high]=temp;
-                    mid++;
+//                    mid++;  //[1, 0, 2, 1, 0]
                     high--;
 
                 }
