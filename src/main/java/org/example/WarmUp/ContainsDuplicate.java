@@ -18,6 +18,22 @@ public class ContainsDuplicate {
     //T.C: O(N)
     //S.C: O(N)
 
+    //Using sort
+    public boolean containsDuplicate4(int[] nums) {
+        Arrays.sort(nums);
+        int nonDuplicateIndex=1;
+        for(int i=0;i<nums.length;i++){
+            if(nums[nonDuplicateIndex-1]!=nums[i] ){
+                nonDuplicateIndex++;
+            }
+        }
+        if(nonDuplicateIndex!=nums.length)
+            return true;
+        return false;
+    }
+    //T.C: O(NLogN) // sort has logn and the loop N
+    //S.C: O(1) as we did not use any extra Data Structure
+
     //Using Sort
     public boolean containsDuplicate2(int[] nums) {
         Arrays.sort(nums);
