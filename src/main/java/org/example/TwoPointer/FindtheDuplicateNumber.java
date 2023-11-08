@@ -30,4 +30,26 @@ public class FindtheDuplicateNumber {
     //T.C: O(N)
     //S.C: O(N)
 
+
+    public int findDuplicate2(int[] nums) {
+        int n=nums.length;
+        int i=0;
+        while(i<n){
+            int correctPosition= nums[i]-1;
+            if(nums[i]!=i+1){
+                if(nums[correctPosition]!=nums[i]){
+                    int temp=nums[i];
+                    nums[i]=nums[correctPosition];
+                    nums[correctPosition]=temp;
+                }else{
+                    return nums[i];
+                }
+            }else{
+                i++;
+            }
+        }
+        return 0;
+    }
+    //T.C: O(N)
+    //S.C: O(1))
 }
